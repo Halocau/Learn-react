@@ -25,6 +25,7 @@ Cách chạy tại chế độ production:
 5. Chạy dự án: npm run preview
 
 
+===
 
 feat: (new feature for the user, not a new feature for build script)
 fix: (bug fix for the user, not a fix to a build script)
@@ -41,3 +42,8 @@ style: (định dạng, thiếu dấu chấm phẩy, v.v.; không thay đổi m�
 refactor: (xếp lại mã sản xuất, ví dụ: đổi tên biến)
 test: (thêm các bài kiểm tra bị thiếu, sắp xếp lại các bài kiểm tra; không thay đổi mã sản xuất)
 chore: (cập nhật các tác vụ grunt, v.v.; không thay đổi mã sản xuất)
+
+git add .
+git commit -m "your message"
+git set remote …
+git push
