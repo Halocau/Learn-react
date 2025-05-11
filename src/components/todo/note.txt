@@ -1,0 +1,7 @@
+display: flex : cho phép sắp xếp các phần tử con 1 cách linh hoạt
+flex-direction: column : Các phần tử con được sắp xếp theo chiều từ trên xuống dưới
+align-items: center : căn giữa theo chiều ngang của trang
+border: none : Tắt viền
+border-radius: 5px : bo tròn bên ngoài 1 xí
+margin-top: 20px : Lùi xuống 20px
+border: 1px solid #ccc;  : in đậm 
