@@ -10,11 +10,19 @@ const App = () => {
     country: "VietNam"
   }
   //{Key:value}
+
+  const addNewTodo = (name) => {
+    alert(`Call me add new todo ${name}`);
+  }
+
+
   return (
     <div className="todo-container">
       <div className="todo-title">Todo List</div>
 
-      <TodoNew />
+      <TodoNew
+        addNewTodo={addNewTodo}// chỉ truyền func chứ ko thực thi func
+      />
 
       <TodoData
         name={quat}
