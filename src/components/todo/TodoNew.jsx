@@ -1,10 +1,19 @@
+import { useState } from "react";
+
 const TodoNew = (props) => {
-    console.log("Check props TodoNew", props.addNewTodo);
+
+    //useState hook
+    // const valueInput = "quat";
+    //[name value, function to update value]
+    // biến truyền vào và hàm để cập nhật giá trị
+    const [valueInput, setValueInput] = useState("quat");
 
     const { addNewTodo } = props;
+
     // addNewTodo("test");
     const handlerClick = () => {
-        alert("Click me");
+        alert("Check value input: ", valueInput);
+
     }
 
     // const handleOnChange = (event) => {
@@ -13,6 +22,7 @@ const TodoNew = (props) => {
 
     const handleOnChange = (name) => {
         console.log(">>> onChange", name);
+        setValueInput(name);
     }
 
     return (
@@ -27,6 +37,7 @@ const TodoNew = (props) => {
                 style={{ cursor: "pointer" }}
                 onClick={handlerClick}// tham chiếu hàm
             >Add</button>
+            <div>My text input is: {valueInput} </div>
         </div>
     );
 }
