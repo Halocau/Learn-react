@@ -21,16 +21,13 @@ const TodoData = (props) => {
             {todoList.map((item, index) => {
                 console.log("Check item => ", item, index);
                 return (
-                    <div className="todo-item">
+                    <div className="todo-item" key={item.id}>
                         <div>{item.id} - {item.name}</div>
                         <button>Delete</button>
                     </div>
 
                 );// dung return thì chỉ có 1 thẻ cha
             })}
-            <div>
-                {JSON.stringify(props.todoList)}
-            </div>
         </div>
     );
 }

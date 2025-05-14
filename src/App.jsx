@@ -8,16 +8,10 @@ import { useState } from "react"
 const App = () => {
 
   const [todoList, setTodoList] = useState([
-    { id: 1, name: 'Learn React' },
-    { id: 2, name: 'Learn Redux' }
+    // { id: 1, name: 'Learn React' },
+    // { id: 2, name: 'Learn Redux' }
   ])
 
-  const quat = "Quát hihi";
-  const a = 22;
-  const data = {
-    address: "HaNoi",
-    country: "VietNam"
-  }
   //{Key:value}
   // ko nên sửa trục tiếp vào state của react vì nó sẽ dễ dẫn tới bug
   const addNewTodo = (name) => {
@@ -44,9 +38,6 @@ const App = () => {
       />
 
       <TodoData
-        name={quat}
-        age={a}
-        data={data}
         todoList={todoList}
       />
 
