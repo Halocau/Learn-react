@@ -5,3 +5,7 @@ border: none : Tắt viền
 border-radius: 5px : bo tròn bên ngoài 1 xí
 margin-top: 20px : Lùi xuống 20px
 border: 1px solid #ccc;  : in đậm 
+
+justify-content: căn chỉnh các phần tử con theo trục chính 
++ space-between: Phần tử đầu tiên nằm sát mép trái, Phần tử cuối cùng nằm sát mép phải, 
+Các phần tử còn lại được dàn đều khoảng trống ở giữa, không có khoảng trống ở hai bên ngoài.

@@ -13,7 +13,7 @@ const TodoNew = (props) => {
     // addNewTodo("test");
     const handlerClick = () => {
         addNewTodo(valueInput);
-
+        setValueInput("");
     }
 
     // const handleOnChange = (event) => {
@@ -32,6 +32,7 @@ const TodoNew = (props) => {
                 placeholder="Enter your task"
                 // onChange={handleOnChange}
                 onChange={(event) => { handleOnChange(event.target.value) }}
+                value={valueInput}
             />
             <button
                 style={{ cursor: "pointer" }}

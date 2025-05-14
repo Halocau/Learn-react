@@ -13,14 +13,21 @@ const TodoData = (props) => {
     // const data = props.data;
 
     //JUNIOR
-    const { name, age, data } = props; // cần dùng thuộc tính nào thì lấy thuộc tính đó
+    const { todoList } = props; // cần dùng thuộc tính nào thì lấy thuộc tính đó
 
-    console.log("Check data props => ", props);
+    console.log("Check data props => ", props.todoList);
     return (
         <div className='todo-data'>
-            <div>My name is {name}</div>
-            <div>Learn {age}</div>
-            <div>Learn 1 {data.address}</div>
+            {todoList.map((item, index) => {
+                console.log("Check item => ", item, index);
+                return (
+                    <div className="todo-item">
+                        <div>{item.id} - {item.name}</div>
+                        <button>Delete</button>
+                    </div>
+
+                );// dung return thì chỉ có 1 thẻ cha
+            })}
             <div>
                 {JSON.stringify(props.todoList)}
             </div>
