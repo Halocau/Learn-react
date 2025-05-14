@@ -19,11 +19,21 @@ const App = () => {
     country: "VietNam"
   }
   //{Key:value}
-
+  // ko nên sửa trục tiếp vào state của react vì nó sẽ dễ dẫn tới bug
   const addNewTodo = (name) => {
-    alert(`Call me add new todo ${name}`);
+    const newToDo = {
+      id: randomIntFromInterval(1, 1000),// random id
+      name: name
+    }
+    setTodoList([...todoList,// copy mảng cũ
+      newToDo// thêm phần tử mới vào cuối mảng
+    ]);
   }
 
+
+  const randomIntFromInterval = (min, max) => { // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
 
   return (
     <div className="todo-container">

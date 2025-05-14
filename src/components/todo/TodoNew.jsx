@@ -12,7 +12,7 @@ const TodoNew = (props) => {
 
     // addNewTodo("test");
     const handlerClick = () => {
-        alert("Check value input: ", valueInput);
+        addNewTodo(valueInput);
 
     }
 
