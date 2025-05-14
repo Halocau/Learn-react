@@ -24,6 +24,11 @@ const App = () => {
     ]);
   }
 
+  //filter: tạo ra 1 mảng mới từ mảng cũ
+  const deleteTodo = (id) => {
+    var newTodoList = todoList.filter((item) => item.id !== id);// chỉ giữ item có id khác với id truyền vào
+    setTodoList(newTodoList);
+  }
 
   const randomIntFromInterval = (min, max) => { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -41,6 +46,7 @@ const App = () => {
       {todoList.length > 0 ?
         <TodoData
           todoList={todoList}
+          deleteTodo={deleteTodo}
         />
 
         :
