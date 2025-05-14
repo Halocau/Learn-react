@@ -37,13 +37,32 @@ const App = () => {
         addNewTodo={addNewTodo}// chỉ truyền func chứ ko thực thi func
       />
 
-      <TodoData
-        todoList={todoList}
-      />
 
-      <div className='todo-image'>
-        <img src={reactLogo} className="logo react" alt="React logo" />
-      </div>
+      {todoList.length > 0 ?
+        <TodoData
+          todoList={todoList}
+        />
+
+        :
+
+        <div className='todo-image'>
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </div>
+      }
+
+      {/*
+      {todoList.length > 0 &&
+        <TodoData
+          todoList={todoList}
+        />
+      }
+
+      {todoList.length === 0 &&
+        <div className='todo-image'>
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </div>
+      }
+      */}
     </div>
   )
 }
