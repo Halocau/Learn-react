@@ -1,12 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-
+import './styles/global.css'
 //create router
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import LoginPage from './pages/login.jsx';
+import RegisterPage from './pages/register.jsx';
+import UsersPage from './pages/user.jsx';
+import ProductPage from './pages/product.jsx';
 
 const router = createBrowserRouter([
   {
@@ -15,15 +19,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <div>Login Page</div>,
+    element: <div><LoginPage /></div>,
   },
   {
     path: "/register",
-    element: <div>Register page</div>,
+    element: <div><RegisterPage /></div>,
   },
   {
     path: "/users",
-    element: <div>User Page</div>,
+    element: <div><UsersPage /></div>,
+  },
+  {
+    path: "/products",
+    element: <div><ProductPage /></div>,
   }
 ]);
 
