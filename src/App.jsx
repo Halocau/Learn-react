@@ -3,6 +3,9 @@ import TodoNew from './components/todo/TodoNew'
 import TodoData from './components/todo/TodoData'
 import reactLogo from './assets/react.svg'
 import { useState } from "react"
+import Header from './components/layout/header'
+import Footer from './components/layout/footer'
+
 
 
 const App = () => {
@@ -35,28 +38,31 @@ const App = () => {
   }
 
   return (
-    <div className="todo-container">
-      <div className="todo-title">Todo List</div>
+    <>
+      <Header />
 
-      <TodoNew
-        addNewTodo={addNewTodo}// chỉ truyền func chứ ko thực thi func
-      />
+      <div className="todo-container">
+        <div className="todo-title">Todo List</div>
 
-
-      {todoList.length > 0 ?
-        <TodoData
-          todoList={todoList}
-          deleteTodo={deleteTodo}
+        <TodoNew
+          addNewTodo={addNewTodo}// chỉ truyền func chứ ko thực thi func
         />
 
-        :
 
-        <div className='todo-image'>
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </div>
-      }
+        {todoList.length > 0 ?
+          <TodoData
+            todoList={todoList}
+            deleteTodo={deleteTodo}
+          />
 
-      {/*
+          :
+
+          <div className='todo-image'>
+            <img src={reactLogo} className="logo react" alt="React logo" />
+          </div>
+        }
+
+        {/*
       {todoList.length > 0 &&
         <TodoData
           todoList={todoList}
@@ -69,7 +75,9 @@ const App = () => {
         </div>
       }
       */}
-    </div>
+        <Footer />
+      </div>
+    </>
   )
 }
 

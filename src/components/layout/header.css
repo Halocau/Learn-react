@@ -1,0 +1,40 @@
+ ul {
+     list-style-type: none;
+     /* Loại bỏ ký hiệu mặc định của danh sách (•, số, chữ cái...) */
+     margin: 0;
+     /* Xóa khoảng cách mặc định bên ngoài danh sách */
+     padding: 0;
+     /* Xóa khoảng cách bên trong mặc định của danh sách */
+     overflow: hidden;
+     /* Ẩn nội dung tràn ra khỏi phần tử chứa */
+     background-color: #333;
+     /* Đặt màu nền tối cho thanh menu */
+ }
+
+ li {
+     float: left;
+     /* Sắp xếp các mục danh sách (li) nằm ngang từ trái sang phải */
+ }
+
+ li a {
+     display: block;
+     /* Biến thẻ <a> thành khối để dễ thiết lập kích thước, padding */
+     color: white;
+     /* Đặt màu chữ là trắng */
+     text-align: center;
+     /* Căn giữa nội dung theo chiều ngang */
+     padding: 14px 16px;
+     /* Tạo khoảng cách bên trong: trên/dưới 14px, trái/phải 16px */
+     text-decoration: none;
+     /* Loại bỏ gạch chân mặc định của liên kết */
+ }
+
+ li a:hover:not(.active) {
+     background-color: #111;
+     /* Khi rê chuột vào liên kết (trừ khi có class 'active'), đổi màu nền */
+ }
+
+ .active {
+     background-color: #04AA6D;
+     /* Liên kết đang được chọn (active) có màu nền xanh lá */
+ }
