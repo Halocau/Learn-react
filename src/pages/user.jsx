@@ -1,6 +1,12 @@
+import UserForm from "../components/user/userForm";
+import UserTable from "../components/user/userTable";
+
 const UsersPage = () => {
     return (
-        <div>Users Page</div>
+        <div style={{ padding: "20px" }}>
+            <UserForm />
+            <UserTable />
+        </div>
     );
 }
 
