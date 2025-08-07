@@ -1,6 +1,7 @@
-import { Input, Button } from 'antd';
+import { Input, Button, notification, Space } from 'antd';
 import { useState } from 'react';
-import axios from 'axios';
+import { createUserAPI } from '../../services/ApiService';
+
 
 const UserForm = () => {
     const [fullname, setFullname] = useState("");
@@ -8,34 +9,18 @@ const UserForm = () => {
     const [password, setPassword] = useState("");
     const [phone, setPhone] = useState("");
 
-    // console.log("info: ", fullname, email, password, phone);
-    const URL_BACKEND = "http://localhost:8080/api/v1/user";
+    const handleClickBtn = async () => {
+        const res = await createUserAPI(fullname, email, password, phone);
+        if (res.data && res.data.data) {
 
-    const data = {
-        fullName: fullname,
-        email: email,
-        password: password,
-        phone: phone
-    }
-
-    const handleClickBtn = () => {
-        // alert("Click me")
-        axios.post(URL_BACKEND, data)
-            .then(function (response) {
-                console.log(response);
+            notification.success({
+                message: "Create user",
+                description: "Create user successfully"
             })
-            .catch(function (error) {
-                console.log("Full error: ", error);
-                if (error.response) {
-                    console.log("Error data: ", error.response.data); // ← xem lỗi cụ thể tại đây
-                    message.error(error.response.data.message || "Failed to create user.");
-                } else {
-                    message.error("Unknown error occurred.");
-                }
-            });
-
-        console.log("check state: ", { fullname, email, password, phone });  // bỏ vào {} nhanh shift + {
+        }
+        console.log(">>>check res: ", res.data);  // bỏ vào {} nhanh shift + {
     }
+
     return (
         <div className="user-form" style={{ margin: "20px 0" }}>
             <div style={{ display: "flex", gap: "15px", flexDirection: "column" }}>
