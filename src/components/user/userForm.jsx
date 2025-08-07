@@ -1,5 +1,6 @@
 import { Input, Button } from 'antd';
 import { useState } from 'react';
+import axios from 'axios';
 
 const UserForm = () => {
     const [fullname, setFullname] = useState("");
@@ -8,9 +9,31 @@ const UserForm = () => {
     const [phone, setPhone] = useState("");
 
     // console.log("info: ", fullname, email, password, phone);
+    const URL_BACKEND = "http://localhost:8080/api/v1/user";
+
+    const data = {
+        fullName: fullname,
+        email: email,
+        password: password,
+        phone: phone
+    }
 
     const handleClickBtn = () => {
         // alert("Click me")
+        axios.post(URL_BACKEND, data)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log("Full error: ", error);
+                if (error.response) {
+                    console.log("Error data: ", error.response.data); // ← xem lỗi cụ thể tại đây
+                    message.error(error.response.data.message || "Failed to create user.");
+                } else {
+                    message.error("Unknown error occurred.");
+                }
+            });
+
         console.log("check state: ", { fullname, email, password, phone });  // bỏ vào {} nhanh shift + {
     }
     return (
@@ -21,7 +44,7 @@ const UserForm = () => {
                     <Input
                         placeholder="Enter your fullname"
                         value={fullname}
-                        onChange={(event) => { setFullname(event.target.value) }}
+                        onChange={(e) => { setFullname(e.target.value) }}
                     />
                 </div>
                 <div>
