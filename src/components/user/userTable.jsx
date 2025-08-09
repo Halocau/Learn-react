@@ -4,13 +4,7 @@ import { useEffect, useState } from 'react';
 
 const UserTable = () => {
 
-    const [dataUsers, setDataUsers] = useState([
-        // {
-        //     name: 'Bui Tien Quat',
-        //     age: '22',
-        //     address: 'Dai hoc FPT'
-        // }
-    ]);
+    const [dataUsers, setDataUsers] = useState([]);
 
     //empty array => run once
     useEffect(() => {

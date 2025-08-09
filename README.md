@@ -47,3 +47,9 @@ git add .
 git commit -m "your message"
 git set remote …
 git push
+
+
+Mounting: constructor → render → componentDidMount
+Updating: render → componentDidUpdate
+Unmounting: componentWillUnmount
+
